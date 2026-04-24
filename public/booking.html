@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Room</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<header class="navbar">
+    <h1>KANAMBA INVENT HOTEL</h1>
+    <nav>
+        <a href="index.html">Home</a>
+    </nav>
+</header>
+
+<section class="hero" style="background-image: url('images/hotel.jpg');">
+    <div class="overlay">
+        <h2>Book Your Stay</h2>
+    </div>
+</section>
+
+<section>
+    <h2>Booking Form</h2>
+
+    <input id="name" placeholder="Your Name"><br><br>
+    <input id="phone" placeholder="Phone Number"><br><br>
+
+    <select id="room">
+        <option>Single</option>
+        <option>Double</option>
+        <option>Twin</option>
+    </select><br><br>
+
+    <img id="roomImage" width="300"><br><br>
+
+    <p id="priceDisplay"></p>
+
+    <input id="nights" type="number" placeholder="Number of nights"><br><br>
+
+    <select id="payment">
+        <option>MTN</option>
+        <option>Airtel</option>
+    </select><br><br>
+
+    <button onclick="bookRoom()">Confirm Booking</button>
+
+    <p id="result"></p>
+
+    <!-- ✅ Availability goes INSIDE section -->
+    <p id="availability"></p>
+
+</section>
+
+<footer>
+    <p>© 2026 Kanamba Invent Hotel | Kasese, Uganda</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>

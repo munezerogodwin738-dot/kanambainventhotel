@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin - Bookings</title>
+</head>
+<body>
+
+<h2>All Bookings</h2>
+<button onclick="loadBookings()">Load Bookings</button>
+
+<div id="output"></div>
+
+<script>
+async function loadBookings() {
+    const res = await fetch("/admin/bookings");
+    const data = await res.json();
+
+    let html = "";
+
+    data.forEach(b => {
+        html += `
+            <div style="border:1px solid #000; padding:10px; margin:10px;">
+                <p>Name: ${b.name}</p>
+                <p>Phone: ${b.phone}</p>
+                <p>Room: ${b.room}</p>
+                <p>Nights: ${b.nights}</p>
+                <p>Total: UGX ${b.totalPrice}</p>
+            </div>
+        `;
+    });
+
+    document.getElementById("output").innerHTML = html;
+}
+</script>
+
+</body>
+</html>
+<p>Status: ${b.status}</p>
+<h2>Room Availability</h2>
+<div id="roomStats"></div>
+<table border="1" width="100%">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Room</th>
+            <th>Nights</th>
+            <th>Payment</th>
+            <th>Total</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+
+    <tbody id="bookingsTable"></tbody>
+</table>
+<script src="admin.js"></script>
+<button onclick="logout()">Logout</button>
+<footer>
+    <p>© 2026 Kanamba Invent Hotel | Kasese, Uganda</p>
+</footer>
